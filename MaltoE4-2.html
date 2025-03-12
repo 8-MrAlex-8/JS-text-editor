@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "MaltoE4-2.css">
+</head>
+<body>
+
+    <!-- theme button groups -->
+    <div id = "themeGroup">
+
+        <p> Check out these themes: </p>
+
+        <div class = "themeGroup-item">
+            <button type = "button" onclick = "dayTheme()"> Day </button>
+        </div>
+        <div class = "themeGroup-item">
+            <button type = "button" onclick = "afternoonTheme()"> Afternoon </button>
+        </div>
+        <div class = "themeGroup-item">
+            <button type = "button" onclick = "nightTheme()"> Night </button>
+        </div>
+    </div>
+
+    <!-- Full content -->
+    <div id = "editor">
+
+        <!-- header -->
+        <h2>Text Editor</h2>
+
+        <!-- main form -->
+        <form id = "txtGroup">
+
+            <!-- text area -->
+            <div class = "textGroup">
+                <span class = "charCountLabel">Character Count: <span id = "charCount">-</span></span> 
+                <br><br>
+                <textarea id = "fullText" onfocus="charCount()"></textarea> <br>
+            </div>
+            <br><br>
+            
+            <div class = "utilityGroup">
+
+                <div id = "notification-container"  class = "alt">
+                    <p id = "notification">Welcome!</p>
+                </div>
+                
+                <!-- search: label, textbox, and button -->
+                <div id="findSection">
+                    <div class = "findSegment">
+                        <label for = "strSearch">Find Text:</label>
+                        <input type = "text" id = "strSearch" name = "strSearch"/>
+                    </div>
+                    <button type = "button" onclick = "searchText()"> SEARCH </button>
+                </div>   
+
+                <p class = "positionText">Position: <span id = "charPosition">-</span></p>
+                
+                <br>
+
+                <!-- replace: label, textbox, and button -->
+                <div id="replaceSection">
+                    <div class = "replaceSegment">
+                        <label for = "strReplace">Replace With:</label>
+                        <input type = "text" id = "strReplace" name = "strReplace"/>
+                    </div>
+                    <button type = "button" onclick = "replaceText()"> REPLACE </button>
+                </div>
+
+                <div id = "notification-container" class = "main">
+                    <p id = "notification">Welcome!</p>
+                </div>
+
+                <!-- button groups -->
+                <div id = "btnGroup" class = "alt">
+                    <div class = "btnGroup-item">
+                        <button type = "button" onclick = "clearFields(1)"> CLEAR FIND/REPLACE </button>
+                    </div>
+                    <div class = "btnGroup-item">
+                        <button type = "button" onclick = "clearFields(2)"> CLEAR ALL </button>
+                    </div>
+                    <div class = "btnGroup-item">
+                        <button type = "button" onclick = "changeCase('upper')"> UPPERCASE </button>
+                    </div>
+                    <div class = "btnGroup-item">
+                        <button type = "button" onclick = "changeCase('lower')"> LOWERCASE </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <br>
+
+        <!-- button groups -->
+        <div id = "btnGroup" class = "main">
+            <div class = "btnGroup-item">
+                <button type = "button" onclick = "clearFields(1)"> CLEAR FIND/REPLACE </button>
+            </div>
+            <div class = "btnGroup-item">
+                <button type = "button" onclick = "clearFields(2)"> CLEAR ALL </button>
+            </div>
+            <div class = "btnGroup-item">
+                <button type = "button" onclick = "changeCase('upper')"> UPPERCASE </button>
+            </div>
+            <div class = "btnGroup-item">
+                <button type = "button" onclick = "changeCase('lower')"> LOWERCASE </button>
+            </div>
+        </div>
+    </div>
+
+    <script src = "MaltoE4-2.js"></script>
+</body>
+</html>
